@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/* ---------------------------------------------- */
+/* menu*/
+/* --------------------------------------------- */
+input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+}
+
+label {
+	position: fixed;
+	top: 4px; 
+	/* left: 10px; */
+	right: 44px;
+	z-index: 1;
+	display: block;
+	font-size: 2em; 
+	color: black; 
+	cursor: pointer;
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+}
+
+input[type=checkbox]:checked ~ label {
+	transform: translate3d(250px, 0, 0) rotate(90deg); 
+}
+
+.check-menu {
+	width: 100%;
+	padding: 40px;
+	background: #f2f2f2;
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+}
+
+input[type=checkbox]:checked ~ .content {
+	transform: translate3d(-250px, 0, 0);
+}
+
+input[type=checkbox]:checked ~ .slide-menu {
+	transform: translate3d(0, 0, 0);
+}
+
+input[type=checkbox]:checked ~ .slide-menu .menu li {
+	width: 100%;
+}
+
+.slide-menu {
+	background-color: white;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	transform: translate3d(-250px, -0, 0); /*가로 세로 깊이*/
+	position: absolute; 
+	width: 630px;
+	color: #ddd;
+	left: 0;
+	height: 100%;
+	transition: all .4s;
+	z-index: 100;
+}
+
+.slide-menu ul li {
+	margin-top: 10px;
+}
+
+.slide-menu h1 {
+	font: 0.8em daum;
+	color: #999;
+	margin: 10px;
+}
+
+.menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	font-size: 0.9em;
+	padding: 15px;
+}
+
+The above code will result in the menu sliding in from the left hand side of the page,
+	if however you would prefer the menu on the right hand side of the page,
+	just change the following code .
+
+label {
+	right: 40px;
+}
+
+input[type=checkbox]:checked ~ label {
+	transform: translate3d(-600px, 0, 0) rotate(90deg);
+}
+
+input[type=checkbox]:checked ~ .content {
+	transform: translate3d(250px, 0, 0); 
+}
+
+.slide-menu {
+	transform: translate3d(630px, 0, 0);
+	right: 0;
+}
+
+/* ------------------------------------------------- */
+/* 카테고리 */
+/* ------------------------------------------------- */
+#category ul {
+	font: 0.9em daum, malgun gothic, verdana;
+	font-weight: bold;
+	padding: 6px 10px;
+}
+
+#category li {
+	padding: 3px 0px;
+	margin-left: 5px;
+	list-style: none;
+}
+
+#category li:before {
+	content: "•"; /* Insert content that looks like bullets */
+	padding-right: 5px;
+	color: #999; /* Or a color you prefer */
+}
+
+#category a:hover {
+	color: #027878;
+	text-decoration: none;
+} 
+/*2depth*/
+#category ul li ul li {
+	padding: 3px 10px;
+	list-style: none;
+}
+
+#category ul li ul li a {
+	list-style: square;
+}
+
+/*3depth*/
+#category ul li ul li ul li {
+	padding: 3px 10px;
+	font-weight: normal;
+	border-bottom: 1px dotted #ddd;
+	list-style: none; 
+}
+#category ul li ul li ul li a {
+	list-style: square;
+}
+.slideMenuTitle{
+	color: black;
+	font-size: 15px;
+	font-weight: 500;
+}
+.slideMenuDiv{
+	margin: 14px;
+}
+.slideMenuIndex{
+	height: 10px;
+}
+.slideMenuAdd{
+	float: right;
+	height: 30px;
+	cursor: pointer;
+}
+.slideMenuList{
+	color: black;
+	font-size: 13px;
+}
+.subSlideMenu{
+	margin-top: 17px;
+	margin-left: 10px;
+}
+#sideMenuRegister{
+	z-index: 1000;
+}
