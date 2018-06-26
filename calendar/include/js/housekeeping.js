@@ -127,7 +127,6 @@ function openModalForhouseKeepingBookRegister() {
 	span.onclick = function() {
         modal.style.display = "none";
     }
-	requestRegisterTheme();
 	$('.howMuch').focus();
 }
 function closeHBRegisterModal() {
@@ -200,6 +199,7 @@ function moveToCal() {
 	location.href = "index.php";
 }
 $(document).ready(function(){ 
+	requestRegisterTheme();
 	makeSearchOption(); 
 	requestInputOutputBreakDown();  
 	$('.search').click(function(){  
