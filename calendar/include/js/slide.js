@@ -22,7 +22,7 @@ function slideMenuRegister() {
 		return; 
 	} 
 	else if(!validationCheckAboutScriptInsert($('#slideMenuRegisterContent').val())){
-		alert("스크립트 문장을 입력할 수 없습니다. "); 
+		alert("스크립트 문장을 입력할 수 없습니다. ");  
 		$('#slideMenuRegisterContent').val("");   
 		return;
 	}
@@ -32,12 +32,12 @@ function slideMenuRegister() {
 function memoRegister(action, key, info) {  
 	jQuery.ajax({
 	    type:"GET",
-	    url:"./server.php?action="+action+"&msg="+key,      
+	    url:"./server.php?action="+action+"&msg="+key,       
 	    success : function(data) { 
 	    	if(data>0){
 	    		//setInitializeInMemoList(); 
 	    		requestMemoList();
-	    		if(action=="memoAdd")
+	    		if(action=="memoAdd") 
 	    			closeMemoRegisterModal();     
 	    		setInitializeContentInput();
 	    	}
@@ -53,9 +53,8 @@ function memoRegister(action, key, info) {
 function setInitializeContentInput() {
 	$('#slideMenuRegisterContent').val(""); 
 }
-function closeMemoRegisterModal() {
-	var modal = document.getElementById('sideMenuRegister'); 
-	modal.style.display = "none"; 
+function closeMemoRegisterModal() {  
+	$('#sideMenuRegister').css("display","none");   
 }
 function setInitializeInMemoList() { 
 	$('div.slideMenuDiv').empty();   
@@ -93,16 +92,16 @@ function fillInTheMemoList(no,content,member) {
 	$(selecter).append(makeDivOfMemoList);        
 }
 function openSlideMenuRegisterModal() { 
-	var modal = document.getElementById('sideMenuRegister'); 
-	var span = document.getElementsByClassName("close")[2];       
-	modal.style.display = "block";  
+	var modal = $('#sideMenuRegister');
+	var span = document.getElementsByClassName("close")[2];     
+	$(modal).css("display","block");  
 	window.onclick = function(event) {     
 	    if (event.target == modal) { 
 	        modal.style.display = "none";       
 	    }
 	}
 	span.onclick = function() {
-        modal.style.display = "none"; 
+		$(modal).css("display","none");  
         closeModifyScheduleModal(); 
     }
 	$('#slideMenuRegisterContent').focus();  

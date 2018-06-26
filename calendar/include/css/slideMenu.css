@@ -15,14 +15,17 @@ label {
 	z-index: 1;
 	display: block;
 	font-size: 2em; 
-	color: black; 
+	color: darkgray; 
 	cursor: pointer;
 	transform: translate3d(0, 0, 0);
 	transition: transform .4s;
 }
+label:hover{
+	color: black; 
+}
 
 input[type=checkbox]:checked ~ label {
-	transform: translate3d(250px, 0, 0) rotate(90deg); 
+	transform: translate3d(250px, 0, 0) rotate(90deg);  
 }
 
 .check-menu {
@@ -93,6 +96,33 @@ label {
 input[type=checkbox]:checked ~ label {
 	transform: translate3d(-600px, 0, 0) rotate(90deg);
 }
+input[type=checkbox]:checked ~ .logoutImg {
+	transform: translate3d(-600px, 0, 0);
+	top: 14px;
+}
+input[type=checkbox]:checked ~ .hb_logo {
+	transform: translate3d(-600px, 0, 0);
+	top: 14px;
+}
+.logoutImg{
+	position: fixed;
+	right: 87px;
+	top: 18px;
+	display: block;
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+}
+.hb_logo, .calicon{ 
+	position: fixed;
+	right: 93px;
+	top: 18px;
+	display: block;
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+	height: 25px; 
+	cursor: pointer;
+}
+
 
 input[type=checkbox]:checked ~ .content {
 	transform: translate3d(250px, 0, 0); 
@@ -163,6 +193,11 @@ input[type=checkbox]:checked ~ .content {
 	float: right;
 	height: 30px;
 	cursor: pointer;
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+}
+.slideMenuAdd:hover{
+	transform: scale(1.5,1.5);   
 }
 .slideMenuList{
 	color: black;

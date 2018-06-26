@@ -1,8 +1,8 @@
 ﻿<?php
 $host = "localhost";
-$user = ""
-$password = ""
-$DB_name = ""
+$user = "";
+$password = "";
+$DB_name = "";
 $conn = mysqli_connect($host, $user, $password, $DB_name);
 mysqli_set_charset($conn, 'utf8');
 $action = $_GET['action']; 

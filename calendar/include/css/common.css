@@ -31,11 +31,20 @@
 	font-size: 38px;
 	font-weight: bold;
 }
-
 .close:hover, .close:focus {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
+}
+html{
+	scrollbar-arrow-color : #333333;
+	scrollbar-base-color:#fff;
+	scrollbar-3dlight-color:#fff;
+	scrollbar-darkshadow-color:#fff;
+	scrollbar-face-color:#333333;
+	scrollbar-highlight-color:#fff;
+	scrollbar-shadow-color:#fff;
+	scrollbar-track-color:#fff;
 }
 *{
 	color: black;
@@ -47,7 +56,7 @@
 	width: 100%;
 	margin-bottom: 30px;
 }
-.nowYearMonth, #nowYearMonthDateInModal, #modifyTitle { 
+.nowYearMonth, #nowYearMonthDateInModal, #modifyTitle, .housekeppingTitle, #hbModalTitle { 
 	font-size: 20px;
 	font-weight: 400;
 	opacity: .54;
@@ -57,16 +66,26 @@
 	margin-right: 15px;
 	margin-top: 2px;
 }
+.nowYearMonth, .housekeppingTitle{
+	width: 100px;
+	color: crimson;
+	font-weight: 550;
+}
 #prev, #next{
 	height: 30px; 
 	cursor: pointer; 
+	margin-right: 5px;
+}
+#prev:hover, #next:hover{
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+	transform: scale(1.5,1.5);   
 }
 
 .oneDay, .previousMonth, .nextMonth{
 	width: 14%;
 	font-size: 12px;
 	line-height: 32px; 
-	font-weight: 400;
 	float: left;
 	cursor: pointer;
 }
@@ -116,14 +135,23 @@ span{
 	cursor: pointer; 
 	height: 13px;
 }
-#registration, #modifyDone, .slideMenuRegisgerDone{
+#registration, #modifyDone, .slideMenuRegisgerDone, .hb_logo, .calicon{ 
 	margin-right: 34px; 
 	height: 30px; 
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
 }
-.memodelete:hover{
+#registration:hover, #modifyDone:hover, .slideMenuRegisgerDone:hover, .hb_logo:hover{
+	transform: scale(1.5,1.5);  
+}
+.memodelete:hover, .hb_logo:hover{ 
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
 	transform: scale(1.5,1.5);  
 }
 #registration:hover{
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
 	transform: scale(1.5,1.5);  
 }
 #registrationContent, #modifyDoneContent, #slideMenuRegisterContent{
@@ -136,9 +164,13 @@ span{
 	font-weight: 550;
 }
 #scheduleDetailList:hover{
-	transform: scale(2,2);  
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+	transform: scale(1.5,1.5);  
 }
 .done:hover{
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
 	transform: scale(1,1);  
 }
 .detailSchedule{
@@ -154,20 +186,66 @@ span{
 	background-color: lightgray; 
 } 
 #add:hover {
-	transform: scale(1.1);  
+	transform: translate3d(0, 0, 0);
+	transition: transform .4s;
+	transform: scale(1.1);   
 }
 .inputbox{
 	margin-left: 15px;
 	padding-left: 4px;
 	height: 20px
 }
+.modal{ 
+	overflow-y: hidden;
+}
+#weekend{
+	font-weight: 900;
+}
+::-webkit-scrollbar {width: 12px; height: 12px;}  
+::-webkit-scrollbar-button:start:decrement, 
+::-webkit-scrollbar-button:end:increment {display: block; width: 12px;height: 12px; background: crimson; border-radius: 6px;}  
+::-webkit-scrollbar-track {background: white;}
+::-webkit-scrollbar-thumb {background: crimson; border-radius:10px; } 
 
+.logoutImg{
+	height: 22px;
+	cursor: pointer;
+}
+.logoutImg:hover, .calicon:hover{ 
+	transform: scale(1.5,1.5);  
+}
 
-
-
-
-
-
-
-
+@media (max-width: 720px) {/*모바일*/
+	*{
+		font-size: 8px;
+	}
+	.input, .output{
+		font-size: 10px;
+	}
+	td, td{
+		height: 20px;
+	}
+	.selectYear, .selectMonth, .selectYearRegister, .selectMonthRegister, .hbRegisterType, .hbRegisterTheme, .selectDateRegister{
+		height: 30px;
+		padding: 5px;
+		font-size: 8px;
+		margin-bottom: 10px;
+		background-color: #ffffff;
+	}
+	.housekeppingTitle{
+		font-size: 12px;
+	}
+	.search, .hbRegister{
+		height: 23px;
+	}
+	.hbmodal_content{
+		width: 85%;
+		height: 140px;
+	}
+	/* .contentDiv{height: 160px;}  */
+	.logoutImg, .calicon{right: 20px;}
+}
+@media (min-width: 720px) {
+	
+}
 

@@ -34,9 +34,9 @@ function getDayOfTheWeekFirstOfMonth() {
 function buildCalendar(){
 	lastDayOfTheWeek = 0;
 	calendarClassNameInitialize();
-	document.getElementById('nowYearMonth').innerHTML = today.getFullYear()+"년"+(today.getMonth()+1)+"월";    
+	document.getElementById('nowYearMonth').innerHTML = today.getFullYear()+"년"+(today.getMonth()+1)+"월";
 	year = today.getFullYear(); 
-	month = (today.getMonth()+1);
+	month = (today.getMonth()+1); 
 	dateStartingPointForShowPreviousDate = 0; 
 	if(getDayOfTheWeekFirstOfMonth()==0) 
 		dateStartingPointForShowPreviousDate = 7;     
@@ -537,13 +537,13 @@ function setMonthHoliday(holidayType) {
 	});  
 }
 function addHolidayHTML(holidayNo, holidayMonth, holidayDate, holidayTitle,holidayType) {
-	for(var i =0; i <= 41; i++){  
+	for(var i =0; i <= 41; i++){   
 		var calendarClassName = document.getElementById(i).className;       
 		var selecter = "#"+i+"";
 		var comparisionText = $(selecter).text();
 		if((comparisionText==holidayDate)&&(calendarClassName==holidayType)){      
 			$(selecter).css("width", "auto").css("color","red");   
-			var contentHTML = "<span id='holiday' style='color: red;'>"+holidayTitle+"</span>";    
+			var contentHTML = "<span id='holiday' style='color: red; font-weight: 900;'>"+holidayTitle+"</span>";    
 			$(selecter).parent().first().append(contentHTML);   
 			break;
 		}  
@@ -561,16 +561,26 @@ function resetHoliday() {
 		}
 	}
 }
-function checkWhatDayIsItTodayForAddHolidayHTML(param) {
-	var jbAry = new Array(0,6,7,13,14,20,21,27,28,34,35,41);
-	var resultBool = false;
-	for(var i = 0; i<jbAry.length; i++){
-		if(param==jbAry[i])
-			break;
+function getSessionInfo() {
+	if (window.sessionStorage) {
+        var position = sessionStorage.getItem('userId'); 
+        if(position==null){
+        	location.href = "login.php";   
+        }
+    }
+}
+function logout() {
+	var logoutConfirm = confirm("로그아웃 하시겠습니까?");
+	if(logoutConfirm){
+		sessionStorage.clear(); 
+		location.href = "login.php";  
 	}
-	return resultBool;
+}
+function moveHouseKeepingBook() {
+	location.href = "housekeeping.php";  
 }
 $(document).ready(function(){ 
+	getSessionInfo();
     $('body').click(function(e){
     	var id = e.target.getAttribute('id'); 
     	var className = e.target.getAttribute('class');  
@@ -616,6 +626,12 @@ $(document).ready(function(){
     });
     $('#next').click(function(){ 
     	nextCalendar();
+    }); 
+    $('.logoutImg').click(function(){ 
+    	logout();  
+    }); 
+    $('.hb_logo').click(function(){ 
+    	moveHouseKeepingBook();
     }); 
     $('.contentDiv').click(function(e){ 
     	var id = $(this).prev().attr('id');

@@ -5,9 +5,9 @@
 <link href="include/css/common.css" rel="stylesheet">  
 <link href="include/css/slideMenu.css" rel="stylesheet">    
 <title>TO-DO LIST</title> 
-</head>
+</head> 
 <body onload="nowCalendar()"style="overflow-x: hidden;">
-	<div id="myModal" class="modal">  
+	<div id="myModal" class="modal">   
       <div class="modal-content"> 
         <div style="margin-bottom: 20px">
         	<span id="nowYearMonthDateInModal" style="float: none;"></span>     
@@ -19,19 +19,19 @@
         	<div class="inputbox" style="margin-top: 20px">  
 	        	<input id="registrationContent" type="text" placeholder="내용을 입력해주세요."  onkeydown="doRegistrationUsingEnterKeyEvent()"/>      
 	        	<img class="registration" id="registration"src="include/registration.png">        
-        	</div>
+        	</div> 
         </div> 
         <span>완료</span> 
-        <div id="completed" style="margin-bottom: 20px; margin-top: 13px"> 
+        <div id="completed" style="margin-bottom: 20px; margin-top: 13px">  
         </div>
         <span>예정</span>
         <div id="notyet" style="margin-top: 13px"> 
         </div>
       </div>  
-    </div>
+    </div>   
     <div id="myModifyModal" class="modal">
-      <div class="modal-content" style="overflow: hidden; overflow: hidden;"> 
-        <div style="margin-bottom: 30px">
+      <div class="modal-content" style="overflow: hidden; height: 12%"> 
+        <div style="margin-bottom: 30px"> 
         	<span id="modifyTitle" style="float: none;">일정 수정</span>     
         	<span class="close" style="float: right; margin-top: -19px">&times;</span> 
         </div>
@@ -63,13 +63,15 @@
 		<div class="nowYearMonthDiv">
 			<span id="nowYearMonth" class="nowYearMonth"></span>
 			<div>
-				<img id="prev" src="include/prev.png">
+				<img id="prev" src="include/prev.png"> 
 				<img id="next" src="include/next.png"> 
 			</div>    
 		</div>
 		<!--------------------------------------------- 사이드메뉴 ---------------------------------------------->
 		<div id="check-menu"> 
 			<input id="toggle" type="checkbox">
+			<img class="logoutImg" id="slideMenuIndex"src="include/logout.png">      
+			<img class="hb_logo" id="slideMenuIndex"src="include/img/hb_logo.png">       
      		<label for="toggle">&equiv;</label>
       		<div class="slide-menu" style="left: unset; top: 0px; overflow: scroll; overflow-x: hidden; position: fixed;">     
       			<div style="margin:14px;margin-bottom: 30px">
@@ -90,7 +92,7 @@
 			<div class="dayOfTheWeek"><span style="width: 100%;">금</span></div>
 			<div class="dayOfTheWeek"><span style="width: 100%; color: red">토</span></div>  
 		</div>
-		<div class="weekDiv">   
+		<div class="weekDiv">    
 			<div class="oneDay" id="weekend"><span class="oneDay" id="0" style="width: 96%; color: red"></span><div class='contentDiv'></div></div>
 			<div class="oneDay"><span class="oneDay" id="1" style="width: 96%"></span><div class='contentDiv'></div></div>
 			<div class="oneDay"><span class="oneDay" id="2" style="width: 96%"></span><div class='contentDiv'></div></div>
