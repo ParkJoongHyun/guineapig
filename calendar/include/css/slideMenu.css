@@ -104,6 +104,10 @@ input[type=checkbox]:checked ~ .hb_logo {
 	transform: translate3d(-600px, 0, 0);
 	top: 14px;
 }
+input[type=checkbox]:checked ~ .charticon {
+	transform: translate3d(-600px, 0, 0);
+	top: 14px;
+}
 .logoutImg{
 	position: fixed;
 	right: 87px;
@@ -112,7 +116,7 @@ input[type=checkbox]:checked ~ .hb_logo {
 	transform: translate3d(0, 0, 0);
 	transition: transform .4s;
 }
-.hb_logo, .calicon{ 
+.hb_logo, .calicon, .charticon, .housekeeping{  
 	position: fixed;
 	right: 93px;
 	top: 18px;
@@ -122,8 +126,10 @@ input[type=checkbox]:checked ~ .hb_logo {
 	height: 25px; 
 	cursor: pointer;
 }
-
-
+.charticon{
+	right: 136px; 
+	top: 18px; 
+}
 input[type=checkbox]:checked ~ .content {
 	transform: translate3d(250px, 0, 0); 
 }

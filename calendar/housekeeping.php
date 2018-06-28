@@ -28,8 +28,8 @@
 			</select>
 			<select class="hbRegisterTheme">       
 			</select> 
-			<input type="number" class="howMuch" placeholder="Price" onkeydown="enterKeyEvent()"/>         
-			<img class="hbRegisterRequestBtn" id="hbRegisterRequestBtn"src="include/registration.png" >
+			<input type="number" class="howMuch" placeholder="Price" onkeydown="enterKeyEvent()"/>          
+			<img class="hbRegisterRequestBtn" id="hbRegisterRequestBtn"src="include/registration.png" > 
         </div>
       </div>  
     </div>   
@@ -41,13 +41,14 @@
 			<input id="toggle" type="checkbox">
 			<img class="logoutImg" id="slideMenuIndex"src="include/logout.png" style="right: 43px; top: 12px;">      
 			<img class="calicon" id="slideMenuIndex"src="include/cal.png" style="right: 50px; top: 11px;">         
+			<img class="charticon" id="slideMenuIndex"src="include/img/charticon.png" style="right: 93px; top: 11px;">           
         </div> 
 	</div> 
 	<div class="hbTableParentDiv">
 		<div class="selectYearMonth">
 			<select class="selectYear">
 			</select>
-			<select class="selectMonth">   
+			<select class="selectMonth">    
 			</select>
 			<img class="search" id="search"src="include/img/search.png" > 
 			<img class="hbRegister" id="hbRegister"src="include/registration.png" >

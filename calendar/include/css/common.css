@@ -135,13 +135,13 @@ span{
 	cursor: pointer; 
 	height: 13px;
 }
-#registration, #modifyDone, .slideMenuRegisgerDone, .hb_logo, .calicon{ 
+#registration, #modifyDone, .slideMenuRegisgerDone, .hb_logo, .calicon, .charticon, .housekeeping{ 
 	margin-right: 34px; 
 	height: 30px; 
 	transform: translate3d(0, 0, 0);
 	transition: transform .4s;
 }
-#registration:hover, #modifyDone:hover, .slideMenuRegisgerDone:hover, .hb_logo:hover{
+#registration:hover, #modifyDone:hover, .slideMenuRegisgerDone:hover, .hb_logo:hover, .searchYear:hover{
 	transform: scale(1.5,1.5);  
 }
 .memodelete:hover, .hb_logo:hover{ 
@@ -211,7 +211,7 @@ span{
 	height: 22px;
 	cursor: pointer;
 }
-.logoutImg:hover, .calicon:hover{ 
+.logoutImg:hover, .calicon:hover, .charticon:hover, .housekeeping:hover{ 
 	transform: scale(1.5,1.5);  
 }
 

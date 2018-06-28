@@ -86,7 +86,7 @@ th{
 	padding-top: 50px;
 	margin-bottom: 18px;
 }
-.selectYear, .selectMonth, .selectYearRegister, .selectMonthRegister, .hbRegisterType, .hbRegisterTheme, .selectDateRegister{ 
+.selectYear, .selectMonth, .selectYearRegister, .selectMonthRegister, .hbRegisterType, .hbRegisterTheme, .selectDateRegister, .selectYearInChart ,.selectMonthInChart, .selectYearInChart2{ 
 	height: 32px;
 	padding: 7px;
 	border: 1px solid lavender;
@@ -94,7 +94,7 @@ th{
 	font-size: 12px; 
 	margin-right: 10px;
 }
-.search, .hbRegister{
+.search, .hbRegister, .searchYear{
 	height: 34px;
 	text-align: center;
 	vertical-align: middle;

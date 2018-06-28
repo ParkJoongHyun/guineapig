@@ -565,7 +565,7 @@ function getSessionInfo() {
 	if (window.sessionStorage) {
         var position = sessionStorage.getItem('userId'); 
         if(position==null){
-        	location.href = "login.php";   
+        	//location.href = "login.php";   
         }
     }
 }
@@ -631,6 +631,9 @@ $(document).ready(function(){
     	logout();  
     }); 
     $('.hb_logo').click(function(){ 
+    	moveHouseKeepingBook();
+    });
+    $('.charticon').click(function(){  
     	moveHouseKeepingBook();
     }); 
     $('.contentDiv').click(function(e){ 

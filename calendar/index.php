@@ -71,12 +71,13 @@
 		<div id="check-menu"> 
 			<input id="toggle" type="checkbox">
 			<img class="logoutImg" id="slideMenuIndex"src="include/logout.png">      
-			<img class="hb_logo" id="slideMenuIndex"src="include/img/hb_logo.png">       
+			<img class="hb_logo" id="slideMenuIndex"src="include/img/hb_logo.png">    
+			<img class="charticon" id="slideMenuIndex"src="include/img/charticon.png">
      		<label for="toggle">&equiv;</label>
       		<div class="slide-menu" style="left: unset; top: 0px; overflow: scroll; overflow-x: hidden; position: fixed;">     
       			<div style="margin:14px;margin-bottom: 30px">
       				<span class="slideMenuTitle">메모</span> 
-      				<img class="slideMenuAdd" id="slideMenuIndex"src="include/memoadd.gif">    
+      				<img class="slideMenuAdd" id="slideMenuIndex"src="include/memoadd.gif">      
       			</div> 
       			<div class="slideMenuDiv">  
       			</div> 

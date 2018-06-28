@@ -5,6 +5,9 @@ var slideMenuRegisterContent;
 function slideMenuAdd() {
 	openSlideMenuRegisterModal();  
 }
+function moveToChart() {
+	location.href = "chart.php";
+}
 $(document).ready(function(){ 
     $('.slideMenuAdd').click(function(){    
     	slideMenuAdd(); 
@@ -12,6 +15,9 @@ $(document).ready(function(){
     $('#slideMenuRegisgerDone').click(function(){ 
     	slideMenuRegister();   
     });
+    $('.charticon').click(function(){   
+		moveToChart(); 
+	});
     requestMemoList();
 }); 
 

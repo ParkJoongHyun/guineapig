@@ -142,7 +142,7 @@ function requestRegisterTheme() {
 	        for(var i = 0; i<Object.keys(jObj).length; i++){     
 	            if(jObj[i].result=='true'){ 
 	            	var no = jObj[i].no; 
-	                var name = jObj[i].name;  
+	                var name = jObj[i].name;   
 	                var desc = jObj[i].desc;  
 	                addRegisterThemeInSelectBox(no,name,desc);  
 	            }
@@ -198,6 +198,9 @@ function enterKeyEvent() {
 function moveToCal() {
 	location.href = "index.php";
 }
+function moveToChart() {
+	location.href = "chart.php";
+}
 $(document).ready(function(){ 
 	requestRegisterTheme();
 	makeSearchOption(); 
@@ -213,5 +216,8 @@ $(document).ready(function(){
 	});
 	$('.calicon').click(function(){   
 		moveToCal();
+	});
+	$('.charticon').click(function(){   
+		moveToChart(); 
 	});
 });
