@@ -3,9 +3,9 @@
  */
 
 var clickedDatePreviousMonthOrNextMonth;
-var clickedDate = 0;
 var subToday = new Date();  
 var today = new Date(); 
+var clickedDate = today.getDate();
 var lastDayOfTheWeek = 0;
 var nowFirstDateOfMonth = 0;
 var dateStartingPointForShowPreviousDate = 0;  
@@ -110,8 +110,7 @@ function showTodayDateColorful() {
 		for(var i = 0; i <= 41; i++){ 
 			var selecter = "#"+i+"";
 			if(($(selecter).text())==today.getDate()){ 
-				$(selecter).parent().css("background","gold");  
-				clickedDate = i; 
+				$(selecter).parent().css("background","gold");      
 				break;
 			} 
 		} 
@@ -121,7 +120,7 @@ function InitializationTodayDateColorful() {
 	for(var i = 0; i <= 41; i++){
 		var checkOnlyClassNameOneDay = document.getElementById(i).className;   
 		var selecter = "#"+i+"";  
-		if(checkOnlyClassNameOneDay=="oneDay"){  
+		if(checkOnlyClassNameOneDay=="oneDay"){   
 			$(selecter).parent().css("background","none");   
 		}
 		else{
@@ -565,7 +564,7 @@ function getSessionInfo() {
 	if (window.sessionStorage) {
         var position = sessionStorage.getItem('userId'); 
         if(position==null){
-        	//location.href = "login.php";   
+        	location.href = "login.php";   
         }
     }
 }
@@ -579,8 +578,22 @@ function logout() {
 function moveHouseKeepingBook() {
 	location.href = "housekeeping.php";  
 }
+function wantToShowWhatstheDateToday() {
+	if((today.getMonth()+2)==(subToday.getMonth()+1)){
+		InitializationTodayDateColorful();
+		for(var i = 0; i <= 41; i++){ 
+			var selecter = "#"+i+"";
+			if(($(selecter).text())==today.getDate()&&($(selecter).parent().children().first().attr('class')=="oneDay")){  
+				$(selecter).parent().css("background","gold");
+				break;
+			} 
+		} 
+	} 
+}
 $(document).ready(function(){ 
+	buildCalendar();
 	getSessionInfo();
+	wantToShowWhatstheDateToday();
     $('body').click(function(e){
     	var id = e.target.getAttribute('id'); 
     	var className = e.target.getAttribute('class');  
@@ -601,7 +614,7 @@ $(document).ready(function(){
     	            	$(selecter).parent().css("background","gold");  
     	            	nowDate = $(selecter).text();  
     	            	selecter = "#"+clickedDate+"";
-    	            	$(selecter).parent().css("background","none");    
+    	            	$(selecter).parent().css("background","none");     
     	            	clickedDate = id;    
     	            	var calendarClassName = document.getElementById(id).className; 
     	            	if(calendarClassName=="oneDay")
@@ -644,8 +657,8 @@ $(document).ready(function(){
             	var calendarClassName = document.getElementById(id).className;
             	if(calendarClassName=="oneDay"){
         			$(selecter).parent().css("background","gold");   
-        			nowDate = $(selecter).text();  
-        			selecter = "#"+clickedDate+"";
+        			nowDate = $(selecter).text();   
+        			selecter = "#"+clickedDate+"";  
                 	$(selecter).parent().css("background","none");     
                 	clickedDate = id;   
             		openModalContainDetailSchedule(); 

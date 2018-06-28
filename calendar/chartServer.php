@@ -82,6 +82,28 @@ else if($action=='theme'){
     }
     echo $json;  
 }
+else if($action=='totalOutput'){
+    $sqlQuery = "select sum(b.output) as output, b.month from hb_breakdown b, hb_theme t where b.theme_no = t.no and b.year = '".$_GET['year']."' group by b.month order by 2";
+    $res = mysqli_query($conn, $sqlQuery);
+    $rowsCount = mysqli_num_rows($res);
+    $json = "";
+    $result = array();
+    if($rowsCount>0){
+        while ($row = mysqli_fetch_array($res)) {
+            $row_array['result'] = 'true';
+            $row_array['month'] = $row['month'];
+            $row_array['output'] = $row['output']; 
+            array_push($result, $row_array);
+        }
+        $json = json_encode($result, JSON_UNESCAPED_UNICODE);
+    }
+    else{
+        $row_array['result'] = 'false';
+        array_push($result, $row_array);
+        $json = json_encode($result, JSON_UNESCAPED_UNICODE);
+    }
+    echo $json;  
+}
 else{
     echo "잘못된 접근입니다.";
 }

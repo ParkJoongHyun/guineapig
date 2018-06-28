@@ -141,7 +141,7 @@ span{
 	transform: translate3d(0, 0, 0);
 	transition: transform .4s;
 }
-#registration:hover, #modifyDone:hover, .slideMenuRegisgerDone:hover, .hb_logo:hover, .searchYear:hover{
+#registration:hover, #modifyDone:hover, .slideMenuRegisgerDone:hover, .hb_logo:hover, .searchYear:hover ,.searchYear3:hover{
 	transform: scale(1.5,1.5);  
 }
 .memodelete:hover, .hb_logo:hover{ 

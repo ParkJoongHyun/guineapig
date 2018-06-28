@@ -45,7 +45,7 @@
         </div> 
 	</div> 
 	<div class="hbTableParentDiv">
-		<div class="selectYearMonth">
+		<div class="selectYearMonth" style="margin-bottom: 15px;"> 
 			<select class="selectYear">
 			</select>
 			<select class="selectMonth">    
@@ -87,6 +87,6 @@
     </div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
 	<script src="include/js/housekeeping.js"></script> 
-	<script src="include/js/common_function.js"></script> 
+	<script src="include/js/common.js"></script> 
 </body>
 </html>

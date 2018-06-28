@@ -2,6 +2,7 @@
 	makeYearOption(".selectYearInChart");
 	makeMonthOption(".selectMonthInChart");
 	makeYearOption(".selectYearInChart2");
+	makeYearOption(".selectYearInChart3");
 }
 function makeYearOption(param) {
 	for(var i = 2000; i <= returnNowYear(); i ++){
@@ -17,7 +18,7 @@ function makeMonthOption(param) {
 		var monthOptionHTML = "<option value='"+i+"'";
 		if(i==returnNowMonth())
 			monthOptionHTML +=  " selected='selected'";
-		monthOptionHTML += ">"+i+"</option>";  
+		monthOptionHTML += ">"+i+"</option>";
 		$(param).append(monthOptionHTML);  
 	} 
 }
@@ -65,7 +66,8 @@ function drawChart() {
 	    			}
 	    		} 
                 var options = {
-                        title: 'A month Expenditure',   
+                        title: 'A Month Expenditure',   
+                        subtitle: 'This chart shows the expenditure of all items.',
                         is3D: true,  
                         sliceVisibilityThreshold:0, 
                         animation: {
@@ -110,7 +112,8 @@ function drawChart() {
                         		min: 16000000
                         	}
                         },
-                        width: '100%'
+                        width: 1000,
+	    				height: 400
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
                 chart.draw(data, options); 
@@ -136,7 +139,7 @@ function drawMonthToMonthChart() {
 	    url:"./chartServer.php?action=theme",   
 	    async: false,
 	    success : function(dataParam) {      
-	    	var jObj = JSON.parse(dataParam);  
+	    	var jObj = JSON.parse(dataParam);
 	    	for(var i = 0; i<Object.keys(jObj).length; i++){
 	    		if(jObj[i].result=='true'){   
 	    			themeList.push(jObj[i].name); 
@@ -145,7 +148,7 @@ function drawMonthToMonthChart() {
 	    },
 	    error : function(xhr, status, error) {      
 	    	alert("HTTP REQUEST ERROR");
-	    } 
+	    }
 	});
 	jQuery.ajax({ 
 	    type:"GET", 
@@ -180,7 +183,7 @@ function drawMonthToMonthChart() {
 	    		} 
 	    		var options = {
 	    				chart: {
-	    					title: 'Monthly Expenses',
+	    					title: 'Monthly Expenses By Type',
 	    					subtitle: 'This chart shows the expenditure of all items.'
 	    				},
 	    				width: 900,
@@ -200,12 +203,56 @@ function drawMonthToMonthChart() {
 function searchDataInChart2() {
 	insertDataInMonthToMonthChart();
 }
+function insertDataInTotalOutputChart() {
+	google.charts.load('current', {'packages':['line']});
+    google.charts.setOnLoadCallback(drawTotalOutputChart);
+}
+function drawTotalOutputChart() {  
+	var themeList = new Array(); 
+	var data;
+	var searchWhatYear = $('.selectYearInChart3').val();
+	jQuery.ajax({ 
+	    type:"GET", 
+	    url:"./chartServer.php?action=totalOutput&year="+searchWhatYear, 
+	    success : function(dataParam) {       
+	    	var jObj = JSON.parse(dataParam);   
+	    	if(jObj[0].result=='true'){
+	    		data = new google.visualization.DataTable(dataParam);  
+	    		data.addColumn('number', 'Total Expenses'); 
+	    		data.addColumn('number', 'Expenses');
+	    		data.addRows(100);
+	    		for(var i = 0; i<Object.keys(jObj).length; i++){    
+	    			var rowsArray = new Array();
+	    			rowsArray.push(parseInt(jObj[i].month)); 
+	    			rowsArray.push(parseInt(jObj[i].output)); 
+	    			data.addRows([rowsArray]);  
+	    		} 
+	    		var options = {
+	    				chart: {
+	    					title: 'Total Expenses Of Month',
+	    					subtitle: 'This chart shows the Monthly total expenditure.'
+	    				},
+	    				width: 900,
+	    				height: 600
+	    		};
+	    		var chart = new google.charts.Line(document.getElementById('chartAllOutput')); 
+	    		chart.draw(data, google.charts.Line.convertOptions(options));
+            }
+	    	else
+	    		alert("해당 데이터가 존재하지 않습니다.");
+	    },
+	    error : function(xhr, status, error) {      
+	    	alert("HTTP REQUEST ERROR");
+	    } 
+	});
+}
 $(document).ready(function(){  
 	makeSearchOptionInChart();
 	insertDataInChart();  
 	insertDataInMonthToMonthChart();
+	insertDataInTotalOutputChart();
 	$('.calicon').click(function(){     
-		moveToCal();
+		moveToCal(); 
 	});
 	$('.housekeeping').click(function(){   
 		moveToHouseKeeping(); 
@@ -215,5 +262,8 @@ $(document).ready(function(){
 	});
 	$('.searchYear').click(function(){    
 		searchDataInChart2();   
+	});
+	$('.searchYear3').click(function(){    
+		insertDataInTotalOutputChart();   
 	});
 });

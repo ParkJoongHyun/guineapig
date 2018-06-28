@@ -1,4 +1,42 @@
 @charset "UTF-8";
+#calmenumodal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1000; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.calmenu_content{  
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 30%; /* Could be more or less, depending on screen size */ 
+	height: 50%; 
+	border-radius: 5px; 
+	margin-top: 11%;
+	overflow: hidden;
+}
+/* The Close Button */
+.closeMenuModal {
+	color: #aaa;
+	float: right;
+	font-size: 38px;
+	font-weight: bold; 
+}
+.closeMenuModal:hover, .closeMenuModal:focus {    
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .loginRequestId, .loginRequestPw{
 	padding: 15px;
 	border: none;
@@ -40,6 +78,26 @@
 .login:hover {
 	background: darkgray;
 }
+.loginModalDiv{
+	text-align: center;
+	margin-bottom: 15px;
+	font-weight: 900;
+    padding-bottom: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 25%; 
+    cursor: pointer;
+    display: table;
+    width: 100%;
+    margin-top: 26px;
+}
+.loginModalDiv:hover {
+    background-color: thistle;
+}
+.loginModalSubDiv{
+	display: table-cell;
+	vertical-align: middle;
+}
 @media (max-width: 720px) {/*모바일*/
 	.loginDiv{
 		margin-left: 0%;   
@@ -56,4 +114,8 @@
 	}
 	.login{height: 15px; width: 70%; font-size: 12px; color: #000000} 
 	.logoinlogin{height: 290px;}
+	.calmenu_content{
+		width: 90%;
+		height: 80%;
+	}
 }

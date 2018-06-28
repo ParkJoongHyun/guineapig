@@ -6,7 +6,7 @@
 <link href="include/css/common.css" rel="stylesheet">  
 <link href="include/css/slideMenu.css" rel="stylesheet">      
 <link href="include/css/chart.css" rel="stylesheet">      
-<title>HouseKeeping Book</title> 
+<title>Chart</title> 
 </head> 
 <body style="overflow-x: hidden;">
 	<div class="parentDiv"> 
@@ -28,10 +28,10 @@
 			</select>
 			<img class="search" id="search"src="include/img/search.png" >
 		</div>  
-		<div class="selectYearMonth" style="float: left; text-align: left; width: 600px; height: 220px;">
+		<div class="selectYearMonth" style="float: left; text-align: left;">
 			<div id="chart_div"></div>
 		</div>
-		<div class="selectYearMonth" style="float: left; text-align: left; width: 100%; height: 560px; margin-left: 26px; margin-bottom: 70px; padding-bottom: 100px;">
+		<div class="selectYearMonth" style="float: left; text-align: left; width: 100%; height: 659px; margin-left: 26px; margin-bottom: -8px;">
 			<div class="searchDivInChart2"> 
 				<select class="selectYearInChart2">   
 				</select>
@@ -39,10 +39,18 @@
 			</div>
 			<div id="chartMonthToMonth"></div>
 		</div>
+		<div class="selectYearMonth" style="float: left; text-align: left; width: 100%; height: 560px; margin-left: 26px; margin-bottom: 70px; padding-bottom: 100px;">
+			<div class="searchDivInChart3"> 
+				<select class="selectYearInChart3">    
+				</select>
+				<img class="searchYear3" id="searchYear3"src="include/img/search.png" >
+			</div>
+			<div id="chartAllOutput"></div> 
+		</div>
     </div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="include/js/chart.js"></script>  
-	<script src="include/js/common_function.js"></script> 
+	<script src="include/js/common.js"></script>   
 </body>
 </html>

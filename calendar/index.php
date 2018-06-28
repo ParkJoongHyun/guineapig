@@ -6,7 +6,7 @@
 <link href="include/css/slideMenu.css" rel="stylesheet">    
 <title>TO-DO LIST</title> 
 </head> 
-<body onload="nowCalendar()"style="overflow-x: hidden;">
+<body style="overflow-x: hidden;">
 	<div id="myModal" class="modal">   
       <div class="modal-content"> 
         <div style="margin-bottom: 20px">

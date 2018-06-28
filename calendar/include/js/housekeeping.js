@@ -116,10 +116,10 @@ function addSameTypeMoney() {
 	$('#all').text(moneyComma((totalInputSum-totalOutputSum)));
 }
 function openModalForhouseKeepingBookRegister() {
-	var modal = document.getElementById('hbRegisterModal');
+	var modal = document.getElementById('#hbRegisterModal'); 
 	var span = document.getElementsByClassName("closeHBModal")[0];  
 	modal.style.display = "block";
-	window.onclick = function(event) {   
+	window.onclick = function(event) {    
 	    if (event.target == modal) {
 	        modal.style.display = "none";    
 	    }
